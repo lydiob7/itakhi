@@ -4,16 +4,16 @@ import { ComponentProps, useLayoutEffect, useRef } from "react";
 import clsx from "clsx";
 import { gsap } from "gsap";
 import TextDisplay from "@/app/components/home/TextDisplay";
-import Clients from "@/app/components/home/Clients";
 import Philosophy from "@/app/components/home/Philosophy";
 import Services from "@/app/components/home/Services";
 import RecentWork from "@/app/components/home/RecentWork";
 import PhraseBanner from "@/app/components/home/PhraseBanner";
-import Pricing from "@/app/components/home/Pricing";
 import FAQs from "@/app/components/home/FAQs";
 import TopSection from "@/app/components/home/TopSection";
 import { useGeneralContext } from "@/context/useGeneralContext";
 import { sections } from "@/context/GeneralContextProvider";
+import Newsletter from "../common/Newsletter";
+import FeaturedPosts from "../common/FeaturedPosts";
 
 interface HomePageProps extends ComponentProps<"div"> {}
 
@@ -46,13 +46,15 @@ const HomePage = ({ className, ...props }: HomePageProps) => {
         <div ref={sectionContext} className={clsx("", className)} {...props}>
             <TopSection />
             <TextDisplay content={`Digital\nAtelier`} speed="slow" />
-            <Clients id={sections.clients} />
             <Philosophy id={sections.philosophy} />
-            <TextDisplay color="lemon" content="we're also eager to do it fast, without all the fluff" speed="slow" />
-            <Services id={sections.services} />
-            <RecentWork id={sections.recentWork} />
             <PhraseBanner />
-            <Pricing id={sections.pricing} />
+            <Services id={sections.services} />
+            <TextDisplay color="lemon" content="we're also eager to do it fast, without all the fluff" speed="slow" />
+            <RecentWork id={sections.recentWork} />
+            <FeaturedPosts />
+            <div className="relative">
+                <Newsletter className="absolute z-50 top-0 -translate-y-1/2 left-1/2 -translate-x-1/2" />
+            </div>
             <FAQs id={sections.faqs} />
         </div>
     );

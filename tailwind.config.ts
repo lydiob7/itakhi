@@ -25,6 +25,7 @@ const config: Config = {
                 wine: "#6C2636",
                 lile: "#DFB9F9",
                 lemon: "#E0FB00",
+                darkGreen: "#0C1F0B",
                 white: "#FFFFFF",
                 oldWhite: "#F9FFFB",
                 gray: "#E5EAE7",

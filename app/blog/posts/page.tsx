@@ -1,5 +1,5 @@
 import generalMetadata from "@/config/metadata";
-import BlogPage from "../components/blog/BlogPage";
+import BlogPage from "@/app/components/blog/BlogPage";
 
 export const metadata = generalMetadata("Blog - Itakhi Digital");
 

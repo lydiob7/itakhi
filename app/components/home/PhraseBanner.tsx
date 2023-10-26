@@ -58,7 +58,8 @@ const PhraseBanner = () => {
                     className="absolute z-10 bottom-6 md:bottom-1/4 -right-8 w-48 md:w-auto"
                     src={brandSquare}
                     alt="Brand square"
-                    fill={true}
+                    width={500}
+                    height={300}
                 />
             </div>
         </div>

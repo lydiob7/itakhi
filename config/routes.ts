@@ -1,7 +1,7 @@
 const routes = {
     auth: "/auth",
     authCallback: "/auth/callback",
-    blog: "/blog",
+    blog: "/blog/posts",
     contact: "/contact",
     dashbord: "/dashbord",
     home: "/",
