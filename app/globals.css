@@ -2,26 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    @apply font-inter text-black;
+}
+
+#root {
+    position: relative;
+}
+
+.btn-primary {
+    @apply bg-lemon;
+}
+
+.btn-secondary {
+    @apply bg-lile;
+}
+
+.btn-black {
+    @apply bg-black text-white;
+}
+
+.btn-black2 {
+    @apply bg-black text-lemon;
+}
+
+.btn-primary-outlined {
+    @apply border-2 border-lemon text-lemon;
+}
+
+.btn-secondary-outlined {
+    @apply border-2 border-lile text-lile;
+}
+
+.btn-black-outlined {
+    @apply border-2 border-black text-black;
+}
+
+.btn-black2-outlined {
+    @apply border-2 border-black text-lemon;
+}
+
+.btn-primary-text {
+    @apply text-lemon;
+}
+
+.btn-secondary-text {
+    @apply text-lile;
+}
+
+.btn-black-text {
+    @apply text-black;
+}
+
+.btn-black2-text {
+    @apply text-lemon;
 }
