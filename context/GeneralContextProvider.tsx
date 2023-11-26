@@ -4,6 +4,7 @@ import { Dispatch, FC, ReactNode, SetStateAction, createContext, useMemo, useSta
 
 export const sections = {
     clients: "clients",
+    contact: "contact",
     philosophy: "philosophy",
     services: "services",
     recentWork: "recent-work",

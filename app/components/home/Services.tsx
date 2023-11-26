@@ -37,7 +37,7 @@ const Services: FC<ServicesProps> = ({ className, ...props }) => {
                         usability.
                     </p>
                 </div>
-                <div className="bg-gray p-6 rounded-[2rem]">
+                <div className="bg-grey p-6 rounded-[2rem]">
                     <h3 className="font-anton uppercase text-15 lg:text-3xl mb-8 whitespace-nowrap">
                         Maintenance and Support
                     </h3>
@@ -48,7 +48,7 @@ const Services: FC<ServicesProps> = ({ className, ...props }) => {
             </div>
 
             <Link href="#pricing" className="block mx-auto w-max md:absolute md:top-24 md:right-0">
-                <Button aria-label="See pricing" className="" color="black" tabIndex={-1}>
+                <Button aria-label="See pricing" className="" tabIndex={-1}>
                     start a project
                 </Button>
             </Link>

@@ -5,12 +5,12 @@ import { gsap } from "gsap";
 import clsx from "clsx";
 import Header from "@/app/components/common/Header";
 import Footer from "@/app/components/common/Footer";
-import Navigation from "@/app/components/common/Navigation";
 import Button from "@/app/components/common/Button";
 import { useUserPreferencesContext } from "@/context/useUserPreferencesContext";
-import { BlackSpiral } from "@/public/assets/images/spirals";
 import { useGeneralContext } from "@/context/useGeneralContext";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import InitialDoodle from "../svgs/InitialDoodle";
+import Logo from "./Logo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,24 +27,37 @@ const Layout = ({ children, className, ...props }: LayoutProps) => {
         gsap.to(sectionContext.current, {
             opacity: 0,
             duration: 0.5,
-            delay: 1.5,
+            delay: 2.25,
             onComplete: () => {
                 setIsInitialAnimationLoading(false);
             }
         });
 
         const ctx = gsap.context(() => {
-            const spinnerTimeline = gsap.timeline();
-            const spinner = ".loading-spinner";
+            const doodleTimeline = gsap.timeline();
+            const logoTimeline = gsap.timeline();
+            const doodle = ".loading-doodle";
+            const logo = ".loading-logo";
 
-            spinnerTimeline.from(spinner, {
+            doodleTimeline.from(doodle, {
                 opacity: 0,
                 duration: 0.2,
                 delay: 0.3
             });
-            spinnerTimeline.to(spinner, {
-                rotate: "60deg",
-                duration: 1.75
+            doodleTimeline.to(doodle, {
+                scale: 0.1,
+                duration: 1.5
+            });
+            doodleTimeline.to(doodle, {
+                opacity: 0,
+                duration: 0.3
+            });
+
+            logoTimeline.from(logo, {
+                opacity: 0,
+                scale: 0.75,
+                duration: 0.5,
+                delay: 1.3
             });
         }, sectionContext);
 
@@ -57,22 +70,21 @@ const Layout = ({ children, className, ...props }: LayoutProps) => {
         <>
             {isInitialAnimationLoading && (
                 <div
-                    className="fixed top-0 left-0 z-[51] w-screen h-screen bg-gray flex flex-col items-center justify-center gap-12"
+                    className="fixed top-0 left-0 z-[53] w-screen h-screen bg-forest-green flex flex-col items-center justify-center gap-12"
                     ref={sectionContext}
                 >
-                    {/* <div className="title text-7xl font-medium">ITAKHI</div> */}
-                    <BlackSpiral className="loading-spinner" />
+                    <InitialDoodle className="loading-doodle h-[70vh]" />
+                    <Logo className="loading-logo w-[80vw] h-auto absolute top-1/2 -translate-y-1/2" color="#B4E55E" />
                 </div>
             )}
             <a
                 className="absolute z-20 top-8 left-2 -translate-x-[100vw] transition-all focus-visible:outline-none focus-visible:translate-x-0"
                 href="#layout-content"
             >
-                <Button aria-label="Skip to content" color="black" size="sm" tabIndex={-1}>
+                <Button aria-label="Skip to content" size="sm" tabIndex={-1}>
                     Skip to content
                 </Button>
             </a>
-            <Navigation />
             <div
                 className={clsx("min-w-screen min-h-screen flex flex-col items-stretch justify-between", className)}
                 {...props}

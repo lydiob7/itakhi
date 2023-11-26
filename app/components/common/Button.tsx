@@ -2,7 +2,7 @@ import { ComponentProps, FC } from "react";
 import clsx from "clsx";
 
 type CustomProps = {
-    color?: "primary" | "secondary" | "black" | "black2";
+    color?: "primary" | "secondary";
     size?: "sm" | "md" | "lg";
     variant?: "contained" | "outlined" | "text";
 };
@@ -11,22 +11,16 @@ function getButtonStyles({ color = "primary", size = "md", variant = "contained"
     const stylesMap = {
         "primary-contained": "btn-primary",
         "secondary-contained": "btn-secondary",
-        "black-contained": "btn-black",
-        "black2-contained": "btn-black2",
         "primary-outlined": "btn-primary-outlined",
         "secondary-outlined": "btn-secondary-outlined",
-        "black-outlined": "btn-black-outlined",
-        "black2-outlined": "btn-black2-outlined",
         "primary-text": "btn-primary-text",
-        "secondary-text": "btn-secondary-text",
-        "black-text": "btn-black-text",
-        "black2-text": "btn-black2-text"
+        "secondary-text": "btn-secondary-text"
     };
 
     const sizeMap = {
-        sm: "py-2 px-4 rounded-lg",
-        md: "p-6 rounded-2xl",
-        lg: "p-8 rounded-2xl"
+        sm: "py-1 px-2 rounded-sm",
+        md: "px-3 py-2 rounded-md",
+        lg: "px-4 py-3 rounded-lg"
     };
 
     return clsx(stylesMap[`${color}-${variant}`], sizeMap[size]);
@@ -38,7 +32,7 @@ const Button: FC<ButtonProps> = ({ className, ...props }) => {
     return (
         <button
             className={clsx(
-                "uppercase font-semibold text-xs md:text-sm",
+                "uppercase font-semibold font-overpass-mono text-xs md:text-sm flex items-center disabled:bg-gray-300 disabled:text-gray-600",
                 getButtonStyles({ color: props.color, size: props.size, variant: props.variant }),
                 className
             )}

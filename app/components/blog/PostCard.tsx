@@ -44,7 +44,7 @@ const PostCard = ({ className, post, ...props }: PostCardProps) => {
                     {post.tags?.length && (
                         <div className="flex gap-2 flex-wrap">
                             {post.tags.map((tag) => (
-                                <span className="bg-gray rounded-full px-4 py-1" key={tag}>
+                                <span className="bg-grey rounded-full px-4 py-1" key={tag}>
                                     {tag}
                                 </span>
                             ))}

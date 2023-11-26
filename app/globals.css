@@ -2,62 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =============================== GENERAL ========================================= */
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    @apply font-inter text-black;
+    @apply font-overpass text-black bg-light-ivory;
 }
 
 #root {
     position: relative;
 }
 
+/* ================================ BUTTONS ========================================== */
+
 .btn-primary {
-    @apply bg-lemon;
+    @apply bg-lime-green text-forest-green;
 }
 
 .btn-secondary {
-    @apply bg-lile;
-}
-
-.btn-black {
-    @apply bg-black text-white;
-}
-
-.btn-black2 {
-    @apply bg-black text-lemon;
+    @apply bg-forest-green text-lime-green;
 }
 
 .btn-primary-outlined {
-    @apply border-2 border-lemon text-lemon;
+    @apply border-2 border-lime-green text-lime-green;
 }
 
 .btn-secondary-outlined {
-    @apply border-2 border-lile text-lile;
-}
-
-.btn-black-outlined {
-    @apply border-2 border-black text-black;
-}
-
-.btn-black2-outlined {
-    @apply border-2 border-black text-lemon;
+    @apply border-2 border-forest-green text-forest-green;
 }
 
 .btn-primary-text {
-    @apply text-lemon;
+    @apply text-lime-green;
 }
 
 .btn-secondary-text {
-    @apply text-lile;
+    @apply text-forest-green;
 }
 
-.btn-black-text {
-    @apply text-black;
+/* =========================== TYPOGRAPHY ====================================== */
+
+.font-display-xxl {
+    @apply font-syne text-100;
+}
+.font-display-xl {
+    @apply font-syne text-80;
+}
+.font-display-lg {
+    @apply font-syne text-60;
+}
+.font-display-md {
+    @apply font-syne text-36 sm:text-40  md:text-52;
+}
+.font-display-sm {
+    @apply font-syne text-44;
 }
 
-.btn-black2-text {
-    @apply text-lemon;
+.font-heading-1 {
+    @apply font-syne text-36 md:text-40;
+}
+.font-heading-2 {
+    @apply font-syne text-32 md:text-36;
+}
+.font-heading-3 {
+    @apply font-syne text-28 md:text-32;
+}
+.font-heading-4 {
+    @apply font-syne text-24 md:text-28;
+}
+.font-heading-5 {
+    @apply font-syne text-20 md:text-24;
+}
+.font-heading-6 {
+    @apply font-syne text-18 md:text-20;
+}
+
+.font-paragraph-lg {
+    @apply text-18 leading-7;
+}
+.font-paragraph-md {
+    @apply text-16;
+}
+.font-paragraph-sm {
+    @apply text-14;
+}
+.font-paragraph-xs {
+    @apply text-12;
 }

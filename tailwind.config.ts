@@ -9,7 +9,20 @@ const config: Config = {
     theme: {
         container: {
             center: true,
-            padding: "1rem"
+            padding: {
+                DEFAULT: "1rem",
+                sm: "1rem",
+                md: "2rem",
+                lg: "2rem",
+                xl: "3rem"
+            },
+            screens: {
+                DEFAULT: "100%",
+                sm: "768px",
+                md: "1024px",
+                lg: "1200px",
+                xl: "1440px"
+            }
         },
         extend: {
             animation: {
@@ -22,15 +35,35 @@ const config: Config = {
                 1: "1px"
             },
             colors: {
-                wine: "#6C2636",
-                lile: "#DFB9F9",
-                lemon: "#E0FB00",
-                darkGreen: "#0C1F0B",
+                "forest-green": "#16280E",
+                "lime-green": "#B4E55E",
+                "pale-lime": "#DAF0A1",
+                "steel-blue": "#134364",
+                "golden-yellow": "#FFC107",
+                "coral-red": "#FF6B6B",
+                "light-ivory": "#EFEFE2",
                 white: "#FFFFFF",
+                black: "#000000",
                 oldWhite: "#F9FFFB",
-                gray: "#E5EAE7",
-                black: "#171717",
+                grey: "#E5EAE7",
                 lightBlack: "#2C2C2C"
+            },
+            fontSize: {
+                "100": ["100px", "102px"],
+                "80": ["80px", "82px"],
+                "60": ["60px", "62px"],
+                "52": ["52px", "56px"],
+                "44": ["44px", "48px"],
+                "40": ["40px", "48px"],
+                "36": ["36px", "44px"],
+                "32": ["32px", "40px"],
+                "28": ["28px", "36px"],
+                "24": ["24px", "32px"],
+                "20": ["20px", "28px"],
+                "18": ["18px", "24px"],
+                "16": ["16px", "24px"],
+                "14": ["14px", "20px"],
+                "12": ["12px", "20px"]
             },
             keyframes: {
                 marquee: {
@@ -41,24 +74,9 @@ const config: Config = {
             }
         },
         fontFamily: {
-            inter: ["var(--font-inter)"],
-            anton: ["var(--font-anton)"]
-        },
-        fontSize: {
-            xs: ["0.75rem", "0.875rem"],
-            sm: ["0.875rem", "1.5rem"],
-            base: "1rem",
-            xl: ["1.125rem", "1.875rem"],
-            "2xl": ["1.25rem", "2rem"],
-            15: ["1.5rem", "2rem"],
-            "3xl": ["2rem", "2.5rem"],
-            "4xl": ["2.25rem", "3rem"],
-            25: ["2.5rem", "3rem"],
-            "5xl": ["3rem", "3.5rem"],
-            "6xl": ["3.5rem", "4rem"],
-            "7xl": "4.5rem",
-            "8xl": "6rem",
-            "9xl": "8rem"
+            overpass: ["var(--font-overpass)"],
+            "overpass-mono": ["var(--font-overpass-mono)"],
+            syne: ["var(--font-syne)"]
         },
         screens: {
             sm: "640px",

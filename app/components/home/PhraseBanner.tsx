@@ -48,7 +48,7 @@ const PhraseBanner = () => {
                         your message resonates where it counts.
                     </p>
                     <Link href="#pricing" className="w-max">
-                        <Button aria-label="See pricing" color="black" tabIndex={-1}>
+                        <Button aria-label="See pricing" tabIndex={-1}>
                             Let&apos;s do it
                         </Button>
                     </Link>

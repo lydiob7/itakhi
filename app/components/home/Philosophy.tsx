@@ -36,7 +36,7 @@ const Philosophy: FC<PhilosophyProps> = ({ className, ...props }) => {
                         className="text-lile text-25 md:text-6xl uppercase mt-3 mb-8"
                         title="We're breaking free from the conventional"
                     />
-                    <p className="text-gray font-light text-base md:text-xl">
+                    <p className="text-grey font-light text-base md:text-xl">
                         At Itakhi, we live by a simple yet revolutionary philosophy: to unleash the full potential of
                         design and development without the baggage of traditional approaches. We&apos;re breaking free
                         from the conventional.
@@ -46,7 +46,7 @@ const Philosophy: FC<PhilosophyProps> = ({ className, ...props }) => {
                         individuality.
                     </p>
                     <Link href="#pricing">
-                        <Button aria-label="See pricing" className="mt-8" color="black" tabIndex={-1}>
+                        <Button aria-label="See pricing" className="mt-8" tabIndex={-1}>
                             be unapollegetically
                         </Button>
                     </Link>

@@ -2,8 +2,8 @@
 
 import clsx from "clsx";
 import { ComponentProps, FC, useState } from "react";
-import { MinusIcon, PlusIcon } from "@/assets/icons";
 import AnimatedTitle from "@/app/components/common/AnimatedTitle";
+import { MinusIcon, PlusIcon } from "@/app/components/common/Icons";
 
 interface QuestionProps {
     answer: string;
@@ -38,7 +38,7 @@ interface FAQsProps extends ComponentProps<"div"> {}
 
 const FAQs: FC<FAQsProps> = ({ className, ...props }) => {
     return (
-        <div className={clsx("bg-wine pt-40 md:pt-48 pb-10 md:pb-20", className)} {...props}>
+        <div className={clsx("bg-wine pt-60 pb-10 md:pb-20", className)} {...props}>
             <div className="container">
                 <AnimatedTitle
                     className="text-25 md:text-6xl uppercase mt-3 mb-8 text-lile"

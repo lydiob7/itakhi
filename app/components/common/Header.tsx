@@ -8,6 +8,7 @@ import navigationConfig from "@/config/navigationConfig";
 import { useAuthContext } from "@/context/useAuthContext";
 import Link from "next/link";
 import { useGeneralContext } from "@/context/useGeneralContext";
+import Logo from "./Logo";
 
 interface HeaderProps extends ComponentProps<"div"> {}
 
@@ -19,63 +20,165 @@ const Header = ({ className, ...props }: HeaderProps) => {
     const handleToggleMenu = () => setIsOpen((prevState) => !prevState);
 
     return (
-        <div className="w-full relative z-[52] bg-white">
-            <div className={clsx("container flex items-center justify-between py-6", className)} {...props}>
-                <Link href={`${routes.home}#top`} className="text-2xl font-semibold">
-                    <h1>ITAKHI</h1>
-                </Link>
-                <div className="flex gap-4 items-center">
-                    {authUser && (
-                        <button className="underline" onClick={logout}>
-                            Logout
-                        </button>
-                    )}
-                    <Link href={routes.contact} className="hidden md:block">
-                        <Button aria-label="See pricing" tabIndex={-1}>
-                            Start a Project
-                        </Button>
+        <div className="w-full relative z-[52]">
+            <div
+                className={clsx(
+                    "sm:container bg-forest-green flex items-center justify-between sm:px-8 sm:py-4 sm:my-4 sm:rounded-full",
+                    className
+                )}
+                {...props}
+            >
+                <div className="bg-light-ivory sm:bg-transparent container flex items-center justify-between py-[10px]">
+                    <Link href={`${routes.home}#top`} className="text-2xl font-semibold">
+                        <Logo className="hidden sm:block h-6" color="#DAF0A1" />
+                        <Logo className="sm:hidden h-6" color="#16280E" />
                     </Link>
-                    <button
-                        aria-label="Mobile menu button"
-                        className="md:hidden flex flex-col justify-between items-stretch gap-[4px] w-[25px]"
-                        onClick={handleToggleMenu}
-                    >
-                        <span className="bg-[#18181B] h-[3px] w-full rounded-full" />
-                        <span className="bg-[#18181B] h-[3px] w-full rounded-full" />
-                        <span className="bg-[#18181B] h-[3px] w-full rounded-full" />
-                    </button>
+                    <div className="flex gap-4 items-center">
+                        <div className="hidden lg:flex gap-8 items-center">
+                            {navigationConfig.map((link) => (
+                                <Link
+                                    key={link.url}
+                                    href={link.url}
+                                    className="font-overpass-mono uppercase text-pale-lime text-14"
+                                    onClick={handleToggleMenu}
+                                    tabIndex={isOpen ? 0 : -1}
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </div>
+
+                        <Link href={routes.dashbord} className="hidden sm:block">
+                            <Button aria-label="See pricing" tabIndex={-1}>
+                                Client portal
+                            </Button>
+                        </Link>
+
+                        <Button
+                            variant="outlined"
+                            aria-label="Mobile menu button"
+                            className={clsx("gap-4 items-center", isOpen ? "hidden" : "hidden sm:flex lg:hidden")}
+                            onClick={handleToggleMenu}
+                        >
+                            Menu
+                            <div className="flex flex-col justify-between items-stretch gap-[4px] w-[23px]">
+                                <span className="bg-pale-lime h-[2px] w-full rounded-full" />
+                                <span className="bg-pale-lime h-[2px] w-full rounded-full" />
+                                <span className="bg-pale-lime h-[2px] w-full rounded-full" />
+                            </div>
+                        </Button>
+                        <Button
+                            color="secondary"
+                            variant="outlined"
+                            aria-label="Mobile menu button"
+                            className={clsx(
+                                "gap-4 items-center pt-[10px] pb-[10px] rounded-lg bg-pale-lime",
+                                isOpen ? "hidden" : "sm:hidden"
+                            )}
+                            onClick={handleToggleMenu}
+                        >
+                            <div className="flex flex-col justify-between items-stretch gap-[4px] w-[23px]">
+                                <span className="bg-forest-green h-[2px] w-full rounded-full" />
+                                <span className="bg-forest-green h-[2px] w-full rounded-full" />
+                                <span className="bg-forest-green h-[2px] w-full rounded-full" />
+                            </div>
+                        </Button>
+
+                        <Button
+                            variant="outlined"
+                            aria-label="Mobile menu button"
+                            className={clsx(
+                                "gap-2 items-center px-2 py-[4px]",
+                                isOpen ? "hidden sm:flex lg:hidden" : "hidden"
+                            )}
+                            onClick={handleToggleMenu}
+                        >
+                            Close
+                            <svg
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 25"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M18.75 6.1875L5.25 19.6875"
+                                    className="stroke-pale-lime"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                                <path
+                                    d="M18.75 19.6875L5.25 6.1875"
+                                    className="stroke-pale-lime"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </Button>
+                        <Button
+                            color="secondary"
+                            variant="outlined"
+                            aria-label="Mobile menu button"
+                            className={clsx(
+                                "gap-4 items-center px-2 py-[5px] rounded-lg bg-pale-lime",
+                                isOpen ? "sm:hidden" : "hidden"
+                            )}
+                            onClick={handleToggleMenu}
+                        >
+                            <svg
+                                width="24"
+                                height="25"
+                                viewBox="0 0 24 25"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M18.75 6.1875L5.25 19.6875"
+                                    className="stroke-forest-green"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                                <path
+                                    d="M18.75 19.6875L5.25 6.1875"
+                                    className="stroke-forest-green"
+                                    strokeWidth="1.5"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </Button>
+                    </div>
                 </div>
             </div>
 
             <nav
                 className={clsx(
-                    "md:hidden absolute top-full w-full bg-white z-30 transition-all",
-                    isOpen ? "max-h-[300vh]" : "max-h-0 overflow-hidden"
+                    "lg:hidden absolute top-full w-full sm:h-auto bg-forest-green sm:bg-light-ivory z-30 transition-all",
+                    isOpen ? "max-h-[300vh] h-screen py-20" : "max-h-0 overflow-hidden"
                 )}
                 aria-label="Primary navigation"
                 title="Primary navigation"
             >
-                <div className="flex flex-col gap-4 p-8">
-                    {navigationConfig.map((link) => {
-                        const highlighted = link.url?.includes("#")
-                            ? currentSection === link.url?.split("#")?.[1]
-                            : location.pathname === link.url;
-
-                        if (link.auth !== undefined && ((link.auth && !authUser) || (!link.auth && authUser)))
-                            return null;
-
-                        return (
-                            <Link
-                                key={link.url}
-                                href={link.url}
-                                className={clsx("text-center")}
-                                onClick={handleToggleMenu}
-                                tabIndex={isOpen ? 0 : -1}
-                            >
-                                {link.label}
-                            </Link>
-                        );
-                    })}
+                <div className="container flex flex-col gap-4">
+                    {navigationConfig.map((link) => (
+                        <Link
+                            key={link.url}
+                            href={link.url}
+                            className={clsx("font-overpass-mono p-2 uppercase text-pale-lime sm:text-forest-green")}
+                            onClick={handleToggleMenu}
+                            tabIndex={isOpen ? 0 : -1}
+                        >
+                            {link.label}
+                        </Link>
+                    ))}
+                    <Link className="sm:hidden" href={routes.dashbord} onClick={handleToggleMenu}>
+                        <Button aria-label="See pricing" tabIndex={-1}>
+                            Client portal
+                        </Button>
+                    </Link>
                 </div>
             </nav>
         </div>

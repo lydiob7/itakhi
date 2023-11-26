@@ -5,7 +5,7 @@ interface FeaturedPostsProps extends ComponentProps<"div"> {}
 
 const FeaturedPosts = ({ className, ...props }: FeaturedPostsProps) => {
     return (
-        <div className={clsx("pb-40 md:pb-48 pt-10 md:pt-20", className)} {...props}>
+        <div className={clsx("container py-10 md:py-20", className)} {...props}>
             FeaturedPosts
         </div>
     );

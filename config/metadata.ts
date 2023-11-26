@@ -5,8 +5,9 @@ import { Metadata } from "next";
 */
 
 const generalMetadata: (title?: string) => Metadata = (
-    title: string = "Itakhi - Bilingual Web Design & Development Solutions"
+    title: string = "Itakhi | Digital Atelier Specialized in Web Design & Services"
 ) => ({
+    metadataBase: new URL("http://localhost:3000"),
     alternates: {
         canonical: "https://itakhidigital.com/"
     },
@@ -17,17 +18,17 @@ const generalMetadata: (title?: string) => Metadata = (
     ],
     colorScheme: "light",
     description:
-        "Empower your online presence with Itakhi's bilingual web design and development solutions. We offer tailored services for small businesses, agencies, and artists, enhancing brand visibility and impact in the USA and Europe. Discover our expertise today.",
+        "At Itakhi, we redefine the digital journey by crafting transformativeweb experiences. Our tailored bilingual web design and development solutions empower small businesses, agencies, and artists, enhancing brand visibility and impact in the USA and Europe.",
     keywords:
-        "bilingual web design, web development, digital solutions, small business, brand visibility, online presence, USA, Europe, product, product management, web design, websites, web development, full stack, frontend, backend, coding, javascript, programación, desarrollo web, desarrollo web full stack, desarrollo de paginas web, desarrollo de aplicaciones web, desarrollo paginas web",
+        "Bilingual web design, Web development solutions, Small business web design, Agency website development, Artist website design, Brand visibility, Impactful web solutions, USA and Europe web design",
     openGraph: {
-        title: "Itakhi - Bilingual Web Design & Development Solutions",
+        title: "Itakhi | Digital Atelier Specialized in Web Design & Services",
         description:
-            "Empower your online presence with Itakhi's bilingual web design and development solutions. We offer tailored services for small businesses, agencies, and artists, enhancing brand visibility and impact in the USA and Europe. Discover our expertise today.",
+            "At Itakhi, we redefine the digital journey by crafting transformativeweb experiences. Our tailored bilingual web design and development solutions empower small businesses, agencies, and artists, enhancing brand visibility and impact in the USA and Europe.",
         type: "website",
         url: "https://itakhidigital.com",
         siteName: "Itakhi",
-        images: [{ url: "assets/images/brand-square.jpg", width: 800, height: 600 }]
+        // images: [{ url: "assets/images/brand-square.jpg", width: 800, height: 600 }]
     },
     title
 });

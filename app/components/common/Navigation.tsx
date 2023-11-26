@@ -2,13 +2,12 @@
 
 import { ComponentProps } from "react";
 import clsx from "clsx";
-import { ArrowUpIcon } from "@/assets/icons";
 import navigationConfig from "@/config/navigationConfig";
 import { useGeneralContext } from "@/context/useGeneralContext";
 import { useAuthContext } from "@/context/useAuthContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import handleScrollIntoView from "@/utils/handleScrollIntoView";
+import { ArrowUpIcon } from "@/app/components/common/Icons";
 
 interface NavigationProps extends ComponentProps<"nav"> {}
 
@@ -49,7 +48,7 @@ const Navigation = ({ className, ...props }: NavigationProps) => {
                         ? currentSection === link.url?.split("#")?.[1]
                         : pathname === link.url;
 
-                    if (link.auth !== undefined && ((link.auth && !authUser) || (!link.auth && authUser))) return null;
+                    // if (link.auth !== undefined && ((link.auth && !authUser) || (!link.auth && authUser))) return null;
 
                     return (
                         <Link

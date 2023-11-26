@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import HomePage from "@/app/components/home/HomePage";
 import generalMetadata from "@/config/metadata";
 

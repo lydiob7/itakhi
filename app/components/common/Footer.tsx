@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 import clsx from "clsx";
-import { InstagramIcon, LinkedinIcon } from "../../../assets/icons";
+import { InstagramIcon, LinkedinIcon } from "@/app/components/common/Icons";
 
 interface FooterProps extends ComponentProps<"div"> {}
 

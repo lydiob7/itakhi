@@ -37,7 +37,7 @@ const ContactPage = () => {
                     name="message"
                     placeholder="Message"
                 />
-                <Button aria-label="Submit form" color="black" type="submit" className="w-max self-end">
+                <Button aria-label="Submit form" type="submit" className="w-max self-end">
                     Send
                 </Button>
             </form>

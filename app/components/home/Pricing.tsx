@@ -23,7 +23,7 @@ const Pricing: FC<PricingProps> = ({ className, ...props }) => {
             </div>
 
             <div className="my-20 mx-6 md:mx-0 lg:mx-14 grid md:flex items-stretch justify-center md:justify-between gap-4">
-                <div className="max-w-[355px] px-8 md:px-4 lg:px-8 py-6 bg-gray rounded-[2rem] flex flex-col items-center justify-between">
+                <div className="max-w-[355px] px-8 md:px-4 lg:px-8 py-6 bg-grey rounded-[2rem] flex flex-col items-center justify-between">
                     <div className="flex flex-col items-center">
                         <h3 className="uppercase text-base mb-4 w-full">starter</h3>
                         <p className="font-anton text-5xl uppercase mb-8">$2500/ one time</p>
@@ -33,8 +33,8 @@ const Pricing: FC<PricingProps> = ({ className, ...props }) => {
                             <li>Content integration</li>
                         </ul>
                     </div>
-                    <Link href={`${routes.contact}?plan=starter`}>
-                        <Button aria-label="Contact form for Starter plan" color="black" tabIndex={-1}>
+                    <Link href={`${routes.home}#contact?plan=starter`}>
+                        <Button aria-label="Contact form for Starter plan" tabIndex={-1}>
                             Get started
                         </Button>
                     </Link>
@@ -50,8 +50,8 @@ const Pricing: FC<PricingProps> = ({ className, ...props }) => {
                             <li>Pause or cancel anytime</li>
                         </ul>
                     </div>
-                    <Link href={`${routes.contact}?plan=standard`}>
-                        <Button aria-label="Contact form for Standard plan" color="black" tabIndex={-1}>
+                    <Link href={`${routes.home}#contact?plan=standard`}>
+                        <Button aria-label="Contact form for Standard plan" tabIndex={-1}>
                             Get started
                         </Button>
                     </Link>
@@ -67,8 +67,8 @@ const Pricing: FC<PricingProps> = ({ className, ...props }) => {
                             <li>Pause or cancel anytime</li>
                         </ul>
                     </div>
-                    <Link href={`${routes.contact}?plan=premium`}>
-                        <Button aria-label="Contact form for Premium plan" color="black" tabIndex={-1}>
+                    <Link href={`${routes.home}#contact?plan=premium`}>
+                        <Button aria-label="Contact form for Premium plan" tabIndex={-1}>
                             Get started
                         </Button>
                     </Link>

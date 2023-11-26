@@ -5,6 +5,7 @@ import { AuthError, Session, User as AuthUser } from "@supabase/supabase-js";
 import supabase from "../config/supabaseConfig";
 import User from "../types/User";
 import routes from "../config/routes";
+import { useRouter } from "next/navigation";
 
 const domain =
     typeof window === "undefined" ? process.env.NEXT_PUBLIC_DEV_URL : window?.location.origin || window?.location.host;
@@ -37,6 +38,8 @@ const AuthContextProvider = ({ children, ...props }: { children: ReactNode }) =>
     const [authError, setAuthError] = useState<AuthError | null>(null);
     const [session, setSession] = useState<Session | null>(null);
     const [profile, setProfile] = useState<User | null>(null);
+
+    const router = useRouter();
 
     const signup = useCallback(async ({ email, password }: LoginProps) => {
         setAuthLoading(true);
@@ -89,8 +92,9 @@ const AuthContextProvider = ({ children, ...props }: { children: ReactNode }) =>
 
     const logout = useCallback(async () => {
         await supabase.auth.signOut();
+        router.push(routes.home);
         setAuthUser(null);
-    }, []);
+    }, [router]);
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
@@ -101,12 +105,15 @@ const AuthContextProvider = ({ children, ...props }: { children: ReactNode }) =>
         const {
             data: { subscription }
         } = supabase.auth.onAuthStateChange((_event, session) => {
+            if (!session) {
+                router.push(routes.home);
+                return setAuthUser(null);
+            }
             setSession(session);
-            setInitialAuthLoading(false);
         });
 
         return () => subscription.unsubscribe();
-    }, []);
+    }, [router]);
 
     useEffect(() => {
         if (session) setAuthUser(session.user);

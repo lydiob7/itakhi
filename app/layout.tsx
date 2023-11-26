@@ -1,15 +1,15 @@
-import { Anton, Inter } from "next/font/google";
+import { Overpass, Overpass_Mono, Syne } from "next/font/google";
 import "./globals.css";
 import UserPreferencesContextProvider from "@/context/UserPreferencesContextProvider";
 import GeneralContextProvider from "@/context/GeneralContextProvider";
 import AuthContextProvider from "@/context/AuthContextProvider";
-import BlogContextProvider from "@/context/BlogContextProvider";
 import clsx from "clsx";
 import Script from "next/script";
 import Layout from "./components/common/Layout";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const anton = Anton({ subsets: ["latin"], variable: "--font-anton", weight: "400" });
+const overpass = Overpass({ subsets: ["latin"], variable: "--font-overpass" });
+const overpass_mono = Overpass_Mono({ subsets: ["latin"], variable: "--font-overpass-mono" });
+const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 `
                 }}
             />
-            <body className={clsx(inter.variable, anton.variable)}>
+            <body className={clsx(overpass.variable, overpass_mono.variable, syne.variable)}>
                 <UserPreferencesContextProvider>
                     <GeneralContextProvider>
                         <AuthContextProvider>

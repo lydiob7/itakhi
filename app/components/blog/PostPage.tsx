@@ -99,7 +99,7 @@ const PostPage = ({ className, currentPost, ...props }: PostPageProps) => {
                     {currentPost.tags?.length && (
                         <div className="flex gap-2 flex-wrap">
                             {currentPost.tags.map((tag) => (
-                                <span className="bg-gray rounded-full px-4 py-1" key={tag}>
+                                <span className="bg-grey rounded-full px-4 py-1" key={tag}>
                                     {tag}
                                 </span>
                             ))}

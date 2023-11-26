@@ -54,7 +54,7 @@ const RecentWork: FC<RecentWorkProps> = ({ className, ...props }) => {
                     </div>
 
                     <Link href="#pricing" className="hidden md:block mt-6">
-                        <Button aria-label="See pricing" className="" color="black" tabIndex={-1}>
+                        <Button aria-label="See pricing" className="" tabIndex={-1}>
                             I want mine
                         </Button>
                     </Link>
