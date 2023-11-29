@@ -5,11 +5,12 @@ import { Dispatch, FC, ReactNode, SetStateAction, createContext, useMemo, useSta
 export const sections = {
     clients: "clients",
     contact: "contact",
+    faqs: "faqs",
     philosophy: "philosophy",
-    services: "services",
-    recentWork: "recent-work",
     pricing: "pricing",
-    faqs: "faqs"
+    recentWork: "recent-work",
+    services: "services",
+    top: "top"
 } as const;
 
 type Section = (typeof sections)[keyof typeof sections];

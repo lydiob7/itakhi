@@ -1,66 +1,17 @@
-"use client";
-
-import Button from "@/app/components/common/Button";
-import brandSquare from "@/public/assets/images/brand-square-3.png";
-import { useLayoutEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { useUserPreferencesContext } from "@/context/useUserPreferencesContext";
-import Image from "next/image";
-import Link from "next/link";
-
 const PhraseBanner = () => {
-    const sectionContext = useRef<HTMLDivElement | null>(null);
-    const { userPrefersReducedMotion } = useUserPreferencesContext();
-
-    useLayoutEffect(() => {
-        if (userPrefersReducedMotion) return;
-
-        const ctx = gsap.context(() => {
-            gsap.fromTo(
-                ".wrapper-background",
-                {
-                    backgroundColor: "#FFD9E0"
-                },
-                {
-                    backgroundColor: "#E5EAE7",
-                    scrollTrigger: {
-                        trigger: sectionContext.current,
-                        start: "top bottom-=200",
-                        end: "top center",
-                        scrub: 1
-                    }
-                }
-            );
-        }, sectionContext);
-
-        return () => {
-            ctx.revert();
-        };
-    }, [userPrefersReducedMotion]);
-
     return (
-        <div ref={sectionContext}>
-            <div className="wrapper-background relative py-10 md:py-20 w-full overflow-x-hidden">
-                <div className="relative z-20 container grid gap-6 md:gap-20 justify-items-center">
-                    <p className="text-15 md:text-3xl max-w-[950px] font-semibold uppercase">
-                        In a digital world, your online presence is power. At Itakhi, we specialize in empowering
-                        artists, freelancers, NGOs, and changemakers like you. We boost your impact and reach, ensuring
-                        your message resonates where it counts.
+        <div>
+            <div className="bg-pale-lime relative py-10 md:py-20 w-full overflow-x-hidden">
+                <div className="container max-w-[1210px] grid gap-6 md:gap-12 justify-items-center">
+                    <p className="font-display font-bold text-center">
+                        In a digital world, your digital presence is power.
                     </p>
-                    <Link href="#pricing" className="w-max">
-                        <Button aria-label="See pricing" tabIndex={-1}>
-                            Let&apos;s do it
-                        </Button>
-                    </Link>
+                    <p className="text-center font-heading-6 sm:font-heading-5 md:font-heading-4 lg:font-heading-3">
+                        At Itakhi, we empower small businesses, agencies, and artists to enhance their online presence
+                        through tailored web design and development solutions. We eliminate industry bureaucracy and
+                        take a holistic approach, ensuring your brand&apos;s cultural and societal impact.
+                    </p>
                 </div>
-
-                <Image
-                    className="absolute z-10 bottom-6 md:bottom-1/4 -right-8 w-48 md:w-auto"
-                    src={brandSquare}
-                    alt="Brand square"
-                    width={500}
-                    height={300}
-                />
             </div>
         </div>
     );

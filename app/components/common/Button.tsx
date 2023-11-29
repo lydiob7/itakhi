@@ -2,7 +2,7 @@ import { ComponentProps, FC } from "react";
 import clsx from "clsx";
 
 type CustomProps = {
-    color?: "primary" | "secondary";
+    color?: "primary" | "secondary" | "tertiary";
     size?: "sm" | "md" | "lg";
     variant?: "contained" | "outlined" | "text";
 };
@@ -11,10 +11,13 @@ function getButtonStyles({ color = "primary", size = "md", variant = "contained"
     const stylesMap = {
         "primary-contained": "btn-primary",
         "secondary-contained": "btn-secondary",
+        "tertiary-contained": "btn-tertiary",
         "primary-outlined": "btn-primary-outlined",
         "secondary-outlined": "btn-secondary-outlined",
+        "tertiary-outlined": "btn-tertiary-outlined",
         "primary-text": "btn-primary-text",
-        "secondary-text": "btn-secondary-text"
+        "secondary-text": "btn-secondary-text",
+        "tertiary-text": "btn-tertiary-text"
     };
 
     const sizeMap = {

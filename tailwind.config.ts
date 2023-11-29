@@ -13,14 +13,14 @@ const config: Config = {
                 DEFAULT: "1rem",
                 sm: "1rem",
                 md: "2rem",
-                lg: "2rem",
-                xl: "3rem"
+                lg: "3rem",
+                xl: "4rem"
             },
             screens: {
                 DEFAULT: "100%",
-                sm: "768px",
-                md: "1024px",
-                lg: "1200px",
+                sm: "100%",
+                md: "100%",
+                lg: "100%",
                 xl: "1440px"
             }
         },

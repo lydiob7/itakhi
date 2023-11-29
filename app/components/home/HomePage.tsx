@@ -6,6 +6,17 @@ import { gsap } from "gsap";
 import TopSection from "@/app/components/home/TopSection";
 import { useGeneralContext } from "@/context/useGeneralContext";
 import { sections } from "@/context/GeneralContextProvider";
+import TextDisplay from "./TextDisplay";
+import PhraseBanner from "./PhraseBanner";
+import Discount from "./Discount";
+import Keywords from "./Keywords";
+import ClientPortal from "./ClientPortal";
+import Services from "./Services";
+import RecentWork from "./RecentWork";
+import Blog from "./Blog";
+import FAQs from "./FAQs";
+import Contact from "./Contact";
+import Newsletter from "../common/Newsletter";
 
 interface HomePageProps extends ComponentProps<"div"> {}
 
@@ -36,7 +47,18 @@ const HomePage = ({ className, ...props }: HomePageProps) => {
 
     return (
         <div ref={sectionContext} className={clsx("", className)} {...props}>
-            <TopSection />
+            <TopSection id={sections.top} />
+            <TextDisplay content="we're also eager to do it fast, without all the fluff" />
+            <PhraseBanner />
+            <Discount />
+            <Keywords />
+            <Services id={sections.services} />
+            <ClientPortal />
+            <RecentWork id={sections.recentWork} />
+            <Blog />
+            <Newsletter />
+            <FAQs id={sections.faqs} />
+            <Contact id={sections.contact} />
         </div>
     );
 };

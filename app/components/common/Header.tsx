@@ -5,7 +5,6 @@ import clsx from "clsx";
 import Button from "@/app/components/common/Button";
 import routes from "@/config/routes";
 import navigationConfig from "@/config/navigationConfig";
-import { useAuthContext } from "@/context/useAuthContext";
 import Link from "next/link";
 import { useGeneralContext } from "@/context/useGeneralContext";
 import Logo from "./Logo";
@@ -14,21 +13,20 @@ interface HeaderProps extends ComponentProps<"div"> {}
 
 const Header = ({ className, ...props }: HeaderProps) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const { authUser, logout } = useAuthContext();
     const { currentSection } = useGeneralContext();
 
     const handleToggleMenu = () => setIsOpen((prevState) => !prevState);
 
     return (
-        <div className="w-full relative z-[52]">
+        <div className={clsx("w-full z-[52] sm:container", isOpen ? "fixed sm:relative" : "relative")}>
             <div
                 className={clsx(
-                    "sm:container bg-forest-green flex items-center justify-between sm:px-8 sm:py-4 sm:my-4 sm:rounded-full",
+                    "bg-forest-green flex items-center justify-between md:px-4 sm:py-2 md:py-3 sm:my-4 sm:rounded-full",
                     className
                 )}
                 {...props}
             >
-                <div className="bg-light-ivory sm:bg-transparent container flex items-center justify-between py-[10px]">
+                <div className="bg-light-ivory sm:bg-transparent container flex items-center justify-between py-[10px] sm:py-0">
                     <Link href={`${routes.home}#top`} className="text-2xl font-semibold">
                         <Logo className="hidden sm:block h-6" color="#DAF0A1" />
                         <Logo className="sm:hidden h-6" color="#16280E" />
@@ -39,7 +37,12 @@ const Header = ({ className, ...props }: HeaderProps) => {
                                 <Link
                                     key={link.url}
                                     href={link.url}
-                                    className="font-overpass-mono uppercase text-pale-lime text-14"
+                                    className={clsx(
+                                        "font-overpass-mono uppercase text-pale-lime text-14",
+                                        currentSection === link.url || currentSection === link.url.split("#")?.[1]
+                                            ? "border-b-1 border-pale-lime"
+                                            : ""
+                                    )}
                                     onClick={handleToggleMenu}
                                     tabIndex={isOpen ? 0 : -1}
                                 >
@@ -72,7 +75,7 @@ const Header = ({ className, ...props }: HeaderProps) => {
                             variant="outlined"
                             aria-label="Mobile menu button"
                             className={clsx(
-                                "gap-4 items-center pt-[10px] pb-[10px] rounded-lg bg-pale-lime",
+                                "gap-4 items-center pt-[10px] pb-[10px] rounded-lg bg-lime-green",
                                 isOpen ? "hidden" : "sm:hidden"
                             )}
                             onClick={handleToggleMenu}
@@ -122,7 +125,7 @@ const Header = ({ className, ...props }: HeaderProps) => {
                             variant="outlined"
                             aria-label="Mobile menu button"
                             className={clsx(
-                                "gap-4 items-center px-2 py-[5px] rounded-lg bg-pale-lime",
+                                "gap-4 items-center px-2 py-[5px] rounded-lg bg-lime-green",
                                 isOpen ? "sm:hidden" : "hidden"
                             )}
                             onClick={handleToggleMenu}
@@ -171,7 +174,15 @@ const Header = ({ className, ...props }: HeaderProps) => {
                             onClick={handleToggleMenu}
                             tabIndex={isOpen ? 0 : -1}
                         >
-                            {link.label}
+                            <span
+                                className={clsx(
+                                    currentSection === link.url || currentSection === link.url.split("#")?.[1]
+                                        ? "border-b-1 border-pale-lime sm:border-forest-green"
+                                        : ""
+                                )}
+                            >
+                                {link.label}
+                            </span>
                         </Link>
                     ))}
                     <Link className="sm:hidden" href={routes.dashbord} onClick={handleToggleMenu}>

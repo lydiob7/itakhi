@@ -13,7 +13,6 @@ interface PostCardProps extends ComponentProps<"div"> {
 }
 
 const PostCard = ({ className, post, ...props }: PostCardProps) => {
-    console.log(post);
     return (
         <Link href={routes.post(post.slug)}>
             <div className={clsx("flex gap-12 items-center h-40 w-full", className)} {...props}>

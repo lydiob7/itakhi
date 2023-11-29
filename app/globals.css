@@ -23,7 +23,11 @@ body {
 }
 
 .btn-secondary {
-    @apply bg-forest-green text-lime-green;
+    @apply bg-forest-green text-pale-lime;
+}
+
+.btn-tertiary {
+    @apply bg-pale-lime text-forest-green;
 }
 
 .btn-primary-outlined {
@@ -34,6 +38,10 @@ body {
     @apply border-2 border-forest-green text-forest-green;
 }
 
+.btn-tertiary-outlined {
+    @apply border-2 border-pale-lime text-pale-lime;
+}
+
 .btn-primary-text {
     @apply text-lime-green;
 }
@@ -42,13 +50,21 @@ body {
     @apply text-forest-green;
 }
 
+.btn-tertiary-text {
+    @apply text-pale-lime;
+}
+
 /* =========================== TYPOGRAPHY ====================================== */
+
+.font-display {
+    @apply font-syne text-44 md:text-52 lg:text-60 xl:text-80 2xl:text-100;
+}
 
 .font-display-xxl {
     @apply font-syne text-100;
 }
 .font-display-xl {
-    @apply font-syne text-80;
+    @apply font-syne text-44 sm:text-52 md:text-60 lg:text-80;
 }
 .font-display-lg {
     @apply font-syne text-60;
@@ -67,7 +83,7 @@ body {
     @apply font-syne text-32 md:text-36;
 }
 .font-heading-3 {
-    @apply font-syne text-28 md:text-32;
+    @apply font-syne text-18 md:text-24 lg:text-28 xl:text-32;
 }
 .font-heading-4 {
     @apply font-syne text-24 md:text-28;

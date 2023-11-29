@@ -10,7 +10,7 @@ const Logo = ({ className, color = "black", ...props }: LogoProps) => {
         <svg
             className={clsx("", className)}
             {...props}
-            width="107"
+            width="80"
             height="40"
             viewBox="0 0 107 40"
             fill="none"
