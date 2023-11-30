@@ -102,3 +102,15 @@ export const DoodleIcon: FC<IconProps> = (props) => (
         />
     </svg>
 );
+
+export const ChevronDownIcon: FC<IconProps> = (props) => (
+    <svg width="19" height="12" viewBox="0 0 19 12" fill="none" {...props}>
+        <path
+            d="M17.5 2.20703L9.5 10.207L1.5 2.20703"
+            stroke="black"
+            strokeWidth="2.66667"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);

@@ -13,7 +13,7 @@ const Discount = ({ className, ...props }: DiscountProps) => {
         <div
             className={clsx(
                 `container relative h-[calc(421px+8.5rem)] sm:h-[calc(440px+8rem)] md:h-[calc(525px+8rem)] 
-                lg:h-[calc(650px+16rem)] flex items-center pt-10 pb-24 sm:py-16 lg:py-32`,
+                lg:h-[calc(650px+16rem)] flex items-center pt-10 pb-24 sm:py-16 lg:py-32 max-w-[1440px]`,
                 className
             )}
             {...props}

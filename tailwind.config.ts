@@ -21,7 +21,7 @@ const config: Config = {
                 sm: "100%",
                 md: "100%",
                 lg: "100%",
-                xl: "1440px"
+                xl: "1824px"
             }
         },
         extend: {

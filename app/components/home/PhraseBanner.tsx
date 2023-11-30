@@ -6,7 +6,7 @@ const PhraseBanner = () => {
                     <p className="font-display font-bold text-center">
                         In a digital world, your digital presence is power.
                     </p>
-                    <p className="text-center font-heading-6 sm:font-heading-5 md:font-heading-4 lg:font-heading-3">
+                    <p className="text-center font-heading-3">
                         At Itakhi, we empower small businesses, agencies, and artists to enhance their online presence
                         through tailored web design and development solutions. We eliminate industry bureaucracy and
                         take a holistic approach, ensuring your brand&apos;s cultural and societal impact.

@@ -3,7 +3,6 @@ import "./globals.css";
 import UserPreferencesContextProvider from "@/context/UserPreferencesContextProvider";
 import GeneralContextProvider from "@/context/GeneralContextProvider";
 import AuthContextProvider from "@/context/AuthContextProvider";
-import clsx from "clsx";
 import Script from "next/script";
 import Layout from "./components/common/Layout";
 
@@ -35,7 +34,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 `
                 }}
             />
-            <body className={clsx(overpass.variable, overpass_mono.variable, syne.variable)}>
+            <body
+                className={`${overpass.variable} ${overpass_mono.variable} ${syne.variable}`}
+                suppressHydrationWarning={true}
+            >
                 <UserPreferencesContextProvider>
                     <GeneralContextProvider>
                         <AuthContextProvider>
