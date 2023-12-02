@@ -8,22 +8,28 @@ import ServiceAccordion, { ServiceAccordionProps } from "./ServiceAccordion";
 
 interface ServicesProps extends ComponentProps<"div"> {}
 
-const services: ServiceAccordionProps[] = [
+interface Service extends ServiceAccordionProps {
+    value: string;
+}
+
+export const services: Service[] = [
     {
         body: "Transform your online presence with custom-coded website services. Get a tailored digital solution in [HIGHLIGHTED_START]up to six weeks.[HIGHLIGHTED_END]",
         image: "/assets/images/service-doodle1.png",
         imageBgColor: "bg-steel-blue",
         price: "Starting at $ 4500",
         priceDetails: "fixed price for customized projects (Up to 4 pages included)",
-        title: "1- Website Services (Custom Code)"
+        title: "1- Website Services (Custom Code)",
+        value: "custom-code"
     },
     {
         body: "Experience a smooth website creation journey with simple briefs and Loom videos – a collaborative approach that brings your vision to life in a mere [HIGHLIGHTED_START]two weeks.[HIGHLIGHTED_END]",
         image: "/assets/images/service-doodle2.png",
         imageBgColor: "bg-pale-lime",
         price: "$ 900-1500",
-        priceDetails: "fixed price for low code projects (Up to 5 using templates)",
-        title: "2-Express Website (Low Code)"
+        priceDetails: "fixed price for low code projects (Up to 5 pages using templates)",
+        title: "2-Express Website (Low Code)",
+        value: "low-code"
     },
     {
         body: "Upgrade your web and app interfaces with our specialized UX/UI design services. Our team crafts intuitive and engaging user experiences, ensuring a seamless interaction.",
@@ -31,7 +37,8 @@ const services: ServiceAccordionProps[] = [
         imageBgColor: "bg-forest-green",
         price: "$ 300",
         priceDetails: "daily",
-        title: "3-UX/UI Design (web and app)"
+        title: "3-UX/UI Design (web and app)",
+        value: "uxui"
     },
     {
         body: "Experience end-to-end digital empowerment with our full-stack services.",
@@ -40,7 +47,8 @@ const services: ServiceAccordionProps[] = [
         price: "$ 300",
         priceDetails: "daily",
         small: true,
-        title: "4-Maintenance and support"
+        title: "4-Maintenance and support",
+        value: "mantainance"
     },
     {
         body: "Maximize flexibility with our hour service pack, where we cater to all your needs, including custom-coded websites, UX/UI design, maintenance and support, and full-stack solutions. ",
@@ -48,14 +56,18 @@ const services: ServiceAccordionProps[] = [
         imageBgColor: "bg-lime-green",
         price: " $ 900",
         priceDetails: "daily",
-        title: "5-25 hours pack"
+        title: "5-25 hours pack",
+        value: "25hs-pack"
     }
 ];
 
 const Services: FC<ServicesProps> = ({ className, ...props }) => {
     return (
         <div
-            className={clsx("container flex flex-col gap-4 lg:flex-row lg:items-center py-10 md:py-20", className)}
+            className={clsx(
+                "container flex flex-col gap-4 lg:flex-row lg:items-center py-10 sm:py-16 md:py-20",
+                className
+            )}
             {...props}
         >
             <div className="grid gap-8 lg:w-2/5 lg:pr-12 shrink-0 grow-0">

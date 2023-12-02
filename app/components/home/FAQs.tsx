@@ -2,17 +2,20 @@ import clsx from "clsx";
 import { ComponentProps, FC } from "react";
 import AnimatedTitle from "@/app/components/common/AnimatedTitle";
 import FAQQuestion from "./FAQQuestion";
+import { SignatureIcon } from "../common/Icons";
 
 interface FAQsProps extends ComponentProps<"div"> {}
 
 const FAQs: FC<FAQsProps> = ({ className, ...props }) => {
     return (
-        <div className={clsx("bg-wine pt-60 pb-10 md:pb-20", className)} {...props}>
+        <div className={clsx("bg-forest-green text-lime-green py-10 sm:py-16 md:py-20", className)} {...props}>
             <div className="container">
-                <AnimatedTitle
-                    className="text-25 md:text-6xl uppercase mt-3 mb-8 text-lile"
-                    title="QUESTIONS? LET'S ANSWER THEM"
-                />
+                <div className="flex items-center gap-4 mb-4">
+                    <SignatureIcon />
+
+                    <p className="uppercase text-lime-green text-sm font-semibold font-overpass-mono">FAQs</p>
+                </div>
+                <h2 className="font-display font-bold mt-3 mb-8">Questions? Let&apos;s answer them</h2>
 
                 <div className="grid md:grid-cols-2 gap-8 place-items-start">
                     <div className="grid gap-8">

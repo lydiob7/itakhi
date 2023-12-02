@@ -35,7 +35,7 @@ const Discount = ({ className, ...props }: DiscountProps) => {
             >
                 <span className="flex items-center gap-4 font-overpass-mono uppercase text-xs md:text-sm text-pale-lime">
                     <SignatureIcon />
-                    Booking now 2023-204
+                    Booking now 2023-2024
                 </span>
                 <h2 className="font-display-xl">20% off first booking</h2>
                 <p className="font-heading-3">We have limited spots available and monthly payment plans!</p>

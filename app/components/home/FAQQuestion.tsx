@@ -15,7 +15,7 @@ const FAQQuestion: FC<QuestionProps> = ({ answer, question }) => {
     return (
         <div>
             <button
-                className="w-full font-semibold text-xl text-lile flex items-start justify-between gap-4"
+                className="w-full font-medium text-xl text-pale-lime flex items-start justify-between gap-4"
                 onClick={() => setIsOpen((bool) => !bool)}
             >
                 <h3 className="block text-left">Q. {question}</h3>
@@ -23,8 +23,8 @@ const FAQQuestion: FC<QuestionProps> = ({ answer, question }) => {
             </button>
             <p
                 className={clsx(
-                    "font-light text-xl text-white overflow-hidden transition-all duration-500",
-                    isOpen ? "max-h-[250px]" : "max-h-0"
+                    "font-light text-xl text-light-ivory overflow-hidden transition-all duration-500",
+                    isOpen ? "max-h-[250px] py-4" : "max-h-0"
                 )}
             >
                 {answer}

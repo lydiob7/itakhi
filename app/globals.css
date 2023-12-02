@@ -89,7 +89,7 @@ body {
     @apply font-syne text-18 sm:text-18 md:text-20 lg:text-24 xl:text-28;
 }
 .font-heading-5 {
-    @apply font-syne text-20 md:text-24;
+    @apply font-syne text-16 sm:text-18 md:text-20 xl:text-24;
 }
 .font-heading-6 {
     @apply font-syne text-18 md:text-20;
